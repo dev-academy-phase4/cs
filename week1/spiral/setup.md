@@ -30,7 +30,7 @@ namespace SpiralTests
 
 Go to the test explorer and choose _Run All_. The test you've just written will be discovered and run after the project builds. Hopefully you should see a little green tick.
 
-So there's a bit going on here. Tests are normally given the _decorator_ `[Fact]`. They have accessibility `public` and don't return anything. If you're familiar with tape testing in JavaScript, the above test is equivalent to:
+There's a bit going on here. Tests are normally given the _decorator_ `[Fact]`. They have accessibility `public` and don't return anything. If you're familiar with tape testing in JavaScript, the above test is equivalent to:
 
 ```js
 test('Working', t => {
