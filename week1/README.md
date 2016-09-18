@@ -5,7 +5,7 @@
  - [Focus](#focus)
  - [Core Concepts](#core-concepts)
  - [Capabilities](#capabilities)
- - [Content](#content)
+ - [Curriculum](#curriculum)
    - [Monday](#monday)
 
 
@@ -57,7 +57,7 @@ By the end of Week One you should be able to:
   - Run simple xUnit tests
 
 
-## Content
+## Curriculum
 
 ### Monday  
 
