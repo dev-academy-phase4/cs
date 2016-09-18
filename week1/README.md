@@ -6,6 +6,7 @@
  - [Core Concepts](#core-concepts)
  - [Capabilities](#capabilities)
  - [Content](#content)
+   - [Monday](#monday)
 
 
 ## Focus
@@ -56,5 +57,8 @@ By the end of Week One you should be able to:
   - Run simple xUnit tests
 
 
-  ## Content
+## Content
 
+### Monday  
+
+ - [C# Basics](basics.md)
