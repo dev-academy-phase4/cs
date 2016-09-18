@@ -3,9 +3,9 @@
 ## Contents
 
  - [Focus](#focus)
- - [Core Concepts]()
- - [Capabilities]()
- - [Content]()
+ - [Core Concepts](#core-concepts)
+ - [Capabilities](#capabilities)
+ - [Content](#content)
 
 
 ## Focus
