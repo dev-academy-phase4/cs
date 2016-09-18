@@ -3,6 +3,7 @@
 To begin with, create a new solution. You can call it what you like: in keeping with the Enspiral theme, we'll call ours `Spiral`. You may as well follow the uppercase convention for .NET solution/project names, most everyone else does.
 
  - For the project type, remember to choose _Console Application_.
+ - Leave the checkboxes for make a new folder and create a repository ticked.
 
 In the solution explorer, right-click the solution name and choose _Add_, then _New Project_. Choose _Class Library_ for the project type, and name it `SpiralTests`.
 
@@ -36,4 +37,11 @@ There's a bit going on here. Tests are normally given the _decorator_ `[Fact]`. 
 test('Working', t => {
   t.ok(true)
 })
+```
+
+When you're done, find the base directory of your solution (it'll be named the same thing as the solution, `Spiral` for example). If the right checkbox was ticked when you created the solution, you should be in a Git repository. Add and commit the solution. Create a repo on your own GitHub, then add a remote to it and push with:
+
+```shell
+git remote add origin https://github.com/your-github-name/spiral
+git push -u origin master
 ```
