@@ -1,5 +1,15 @@
 # Week One Overview
 
+## Contents
+
+ - [Focus](#focus)
+ - [Core Concepts]()
+ - [Capabilities]()
+ - [Content]()
+
+
+## Focus
+
 The focus of this week is:
 
  - Learning basic C# syntax
@@ -44,3 +54,7 @@ By the end of Week One you should be able to:
   - Read a file
   - Write to a file
   - Run simple xUnit tests
+
+
+  ## Content
+
