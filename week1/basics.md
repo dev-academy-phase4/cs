@@ -14,8 +14,8 @@ You could take this content at different speeds. If you want to push further thr
 ## Exercises
 
 First, get super-comfortable with simple console operations. `Console.WriteLine` all the things! 
- 1. Write methods that accept various types and return various other types.
- 2. Create your own types using _classes_. Be sure you understand the difference between _defining_ a class and _instantiating_ an object of that class.
+ 1. Conditionals should be almost exactly the same as in JavaScript, but just do a little quick practice with them to be sure you're comfortable.
+ 2. Play with [the default system types](https://msdn.microsoft.com/en-us/library/83fhsxwc.aspx). There's a lot of 'em!
  3. Fill an array with some dummy data and try to perform the CRUD (CREATE, READ, UPDATE, DELETE) operations on the data. Be sure you can easily loop through the array and output the data to the screen.
  4. Get very comfortable with creating a solution and adding projects and class files to it.
 
@@ -24,8 +24,6 @@ First, get super-comfortable with simple console operations. `Console.WriteLine`
 
 One thing I quite like to do with a new language in the console is to write a text-based [Roguelike](https://en.wikipedia.org/wiki/Roguelike) game: a simple game where the player, all the objects terrain are represented as text characters. There's a surprising amount of complexity you can add, but you can also keep it extremely basic. There's a storied history of Roguelikes stretching back to <a href="https://en.wikipedia.org/wiki/Hack_(video_game)">Hack</a>.
 
-Of course, you can write whatever test/demo projects you like! However, each day this week we'll walk you through making a very simple console game using C#.
+Of course, you can write whatever test/demo projects you like! However, each day this week we'll walk you through making a very simple console game using C#. We're taking the TDD approach so you'll get some familiarity with writing xUnit tests and making them pass.
 
-Today, try just doing [the setup]().
-
-
+Today, try just doing [the setup](https://github.com/dev-academy-phase4/cs/blob/master/week1/spiral/setup.md).
