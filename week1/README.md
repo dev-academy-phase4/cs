@@ -7,6 +7,10 @@
  - [Capabilities](#capabilities)
  - [Curriculum](#curriculum)
    - [Monday](#monday)
+   - [Tuesday](#tuesday)
+   - [Wednesday](#wednesday)
+   - [Thursday](#thursday)
+   - [Friday](#friday)
 
 
 ## Focus
@@ -67,3 +71,6 @@ By the end of Week One you should be able to:
 
  - [Classes and Methods](classes-methods.md)
 
+### Wednesday
+
+ - [Collections, LINQ, and Other Goodness](collections-linq.md)
