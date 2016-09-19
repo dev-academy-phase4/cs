@@ -22,4 +22,4 @@ The last exercise gives you a chance to practice creating a few simple types (cl
 
 ## Spiral: the Board
 
-Let's kick this off with a few tests that actually do something. Have a go at [creating the game board](board.md).
+Let's kick this off with a few tests that actually do something. Have a go at [creating the game board](spiral/board.md).
