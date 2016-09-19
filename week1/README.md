@@ -62,3 +62,8 @@ By the end of Week One you should be able to:
 ### Monday  
 
  - [C# Basics](basics.md)
+
+### Tuesday
+
+ - [Classes and Methods](classes-methods.md)
+
