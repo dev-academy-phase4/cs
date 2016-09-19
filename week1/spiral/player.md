@@ -1,4 +1,6 @@
-Now that we have a board, it's time to add the protagonist. In the running program we'll need a `player` object, so to create the object we'll need a `Player` class. The class will need a way to track the player's current position on the board: we suggest you create properties for `Row` and `Col`.
+# The Player
+
+Now that we have a [board](board.md), it's time to add the protagonist. In the running program we'll need a `player` object, so to create the object we'll need a `Player` class. The class will need a way to track the player's current position on the board: we suggest you create properties for `Row` and `Col`.
 
 Write a test that checks to see that a newly instantiated object of class `Player` has both these properties set to 0. Remember, you'll need to create a new class file called `PlayerTests` in the `SpiralTests` project. The framework for your test will look like this:
 
@@ -64,17 +66,17 @@ Write a test that calls a `MovePlayer("e")` method on `Board`. Make sure it move
 To have your game respond to input, we can use a `while` loop to listen continuously for key presses until we receive the 'Q' (for 'quit') key:
 
 ```cs
-            string key = "";
-            while((key = Console.ReadKey(true).KeyChar.ToString()) != "q")
-            {
-			    // Use a switch statement here to act on the input
-			}
+    string key = "";
+    while((key = Console.ReadKey(true).KeyChar.ToString()) != "q")
+    {
+        // Use a switch statement here to act on the input
+    }
 ```
 
 Set up some cases that call `MovePlayer()` for various directions and try moving your player around the board. After each input, you should call your board clearing method, your board update method, clear the terminal window, and output the board to the console like so:
 
 ```cs
-            board.Update();
-            Console.Clear();
-            Console.Write(board);
+    board.Update();
+    Console.Clear();
+    Console.Write(board);
 ```
