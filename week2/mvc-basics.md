@@ -14,6 +14,6 @@
 4. Watch _Customizing Views_ in [https://mva.microsoft.com/en-US/training-courses/introduction-to-aspnet-mvc-8322](Introduction to ASP.NET MVC).
 
 
-## [The exercise]
+## Exercise
 
 Using Visual Studio 2015, create a new ASP.NET MVC application. Select the MVC template and build a build a clone of Twitter. The web app should let the user see a list of all tweets if they aren't signed in, but let them submit a new tweet if they are. You aren't expected to finish this application today, but you should be able to create some models, views and controllers to get started. Tomorrow we'll explore authentication.
