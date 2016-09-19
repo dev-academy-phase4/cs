@@ -18,6 +18,7 @@ First, get super-comfortable with simple console operations. `Console.WriteLine`
  2. Play with [the default system types](https://msdn.microsoft.com/en-us/library/83fhsxwc.aspx). There's a lot of 'em!
  3. Fill an array with some dummy data and try to perform the CRUD (CREATE, READ, UPDATE, DELETE) operations on the data. Be sure you can easily loop through the array and output the data to the screen.
  4. Get very comfortable with creating a solution and adding projects and class files to it.
+ 5. Try out a couple of C# REPL environments to see which ones you're most comfortable with. Note that Visual Studio has its own REPL under _View / Other Windows / C# Interactive_.
 
 
 ## Write a game
