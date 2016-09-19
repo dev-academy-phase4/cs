@@ -16,9 +16,13 @@ This edition of Phase 4 provides an introduction to the Microsoft web ecosystem.
 
  - The C# language
  - Unit testing with xUnit
- - Databases and the Entity Framework ORM
  - Web development with ASP.NET MVC
+ - Databases and the Entity Framework ORM
  - API provision with ASP.NET Web API
+
+The expectation is that because you have graduated from EDA, you should now have a good understanding about how to go about learning new technologies. You know better than anyone what works best for you. Don't feel confined to the resources we reference here. You're in charge of your learning; we're just here to help however we can.
+
+Have fun!
 
 
 ## Requirements
