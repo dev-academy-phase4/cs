@@ -23,7 +23,7 @@ namespace SpiralTests
         [Fact]
         public void Working ()
         {
-			Assert.True(true);
+            Assert.True(true);
         }
     }
 }
