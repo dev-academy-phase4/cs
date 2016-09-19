@@ -1,4 +1,4 @@
-### Setup
+# Setup
 
 To begin with, create a new solution. You can call it what you like: in keeping with the Enspiral theme, we'll call ours `Spiral`. You may as well follow the uppercase convention for .NET solution/project names, most everyone else does.
 
