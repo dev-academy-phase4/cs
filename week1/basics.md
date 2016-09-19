@@ -27,3 +27,12 @@ One thing I quite like to do with a new language in the console is to write a te
 Of course, you can write whatever test/demo projects you like! However, each day this week we'll walk you through making a very simple console game using C#. We're taking the TDD approach so you'll get some familiarity with writing xUnit tests and making them pass.
 
 Today, try just doing [the setup](https://github.com/dev-academy-phase4/cs/blob/master/week1/spiral/setup.md).
+
+
+## Resources
+
+ - [Built-In Types Table](https://msdn.microsoft.com/en-us/library/83fhsxwc.aspx)
+ - [Introduction to Static and Dynamic Typing](https://www.sitepoint.com/typing-versus-dynamic-typing/)
+ - [repl.it C#](https://repl.it/languages/csharp) - a C# REPL
+ - [Introducing the Visual Studio 'C# REPL'](https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/103)
+ - [Getting started with xUnit](https://xunit.github.io/docs/getting-started-desktop.html)
