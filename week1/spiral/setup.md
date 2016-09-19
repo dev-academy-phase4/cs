@@ -36,6 +36,7 @@ There's a bit going on here. Tests are normally given the _decorator_ `[Fact]`. 
 ```js
 test('Working', t => {
   t.ok(true)
+  t.end()
 })
 ```
 
