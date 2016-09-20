@@ -28,3 +28,8 @@ Define the `Output` method so it checks each character and changes the colour de
 Before sending the board characters to the console, we can do a little preprocessing. For example, the board tends to look narrow and tall because console characters are about half as wide as they are high. Write a test that passes a string to a method called `AddSpaces` and checks to see a space has been inserted every second character. Then make it pass!
 
 You could also add one that draws a border around the map, one that adds a key or other accompanying text, and so on.
+
+
+## Massive flicker
+
+By now you're probably noticing that the display flickers pretty badly on each movement. This is because we're redrawing the board every time, even when most of it doesn't need to be drawn. As a bonus exercise, see what you can do about that. Hint: `Console.SetCursorPosition`.
