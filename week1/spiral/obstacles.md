@@ -1,3 +1,5 @@
+# Things to bump into
+
 So far the player exists in a featureless landscape of dots. Let's change that with some objects the player must navigate around. We can use obstacles to construct walls and rooms.
 
 Creating obstacles should be very similar to the way we created the player. The only real difference is that they don't move around, so it should be even easier! Create a new class file, `Obstacle.cs`, and a corresponding test class. You first test should just make sure that the obstacle's `Row` and `Col` properties are set correctly in the constructor. You probably shouldn't make a constructor that takes no arguments: unlike the player, we always want to specify where our obstacles are.

@@ -74,3 +74,7 @@ By the end of Week One you should be able to:
 ### Wednesday
 
  - [Collections, LINQ, and Other Goodness](collections-linq.md)
+
+### Thursday
+
+ - [Async](async.md)
