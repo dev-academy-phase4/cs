@@ -78,3 +78,7 @@ By the end of Week One you should be able to:
 ### Thursday
 
  - [Async](async.md)
+
+### Friday
+
+ - [Best Practices](best-practices.md)
