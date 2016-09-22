@@ -1,6 +1,11 @@
 # Best Practices
 
-'Best' practices are tricky: sometimes they're a matter of personal opinion, sometimes there are wildly varying views on the subject, and often it's hard to know who to listen to when you're just starting out with a language. Here's one attempt at [a C# guide from Deborah Kurata](https://app.pluralsight.com/library/courses/csharp-best-practices-improving-basics/table-of-contents).
+'Best' practices are tricky: sometimes they're a matter of personal opinion, sometimes there are wildly varying views on the subject, and often it's hard to know who to listen to when you're just starting out with a language. Here's one attempt at [a C# guide from Deborah Kurata](https://app.pluralsight.com/library/courses/csharp-best-practices-improving-basics/table-of-contents). There's quite a bit of content, so pick and choose if you like, or watch it start to finish.
+
+
+## Exercises
+
+As you go along, try to rewrite parts of your code from earlier in the week using the techniques described in the Pluralsight content. Think about what your code looks like to another developer. How easy is it to understand? Enlist someone else from the course or a teacher to conduct a brief code review.
 
 
 ## Spiral: Loading stuff
