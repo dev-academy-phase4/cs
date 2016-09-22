@@ -76,9 +76,3 @@ By the end of Week Two you should be able to:
 
  - [Deployment with Azure]()
 
-
-## More Resources
-
- - [https://github.com/jongalloway/MVA-Introduction-to-ASPNET-MVC](Source code for the Introduction to ASP.NET MVC series).
- - [http://www.asp.net/mvc/overview/getting-started/introduction/getting-started](Getting Started with ASP.NET MVC 5): 11 tutorials. This uses VS 2013, but you should use VS 2015.
- - [http://www.asp.net/mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application](Lifecycle of an ASP.NET MVC 5 Application): PDF.
