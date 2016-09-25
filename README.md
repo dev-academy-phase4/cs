@@ -39,6 +39,13 @@ If you have a Windows laptop, great! Windows can also be run on a dual-boot with
 We may be able to help a (very) limited number of people with getting hold of a Windows install, but please exhaust all other available options first.
 
 
+### A note on Visual Studio Code
+
+You may be tempted to think that you will be able to complete this course using Visual Studio Code, Microsoft's open source editor/IDE which can be used with C# .NET _Core_. However, .NET Core is quite a different beast to .NET 4.x! It's a cross-platform library that has many of the same properties as the Windows .NET library, but has been updated and changed in many ways.
+
+Many encouraging developments are taking place in the open source .NET space, but for now most commercial development in the industry is taking place using .NET for Windows and the full version of Visual Studio (not VS Code). This is the environment that Phase 4 C# currently prepares you for: sadly, we don't offer a cross-platform curriculum just yet.
+
+
 ## Curriculum
 
  - [Week 1](week1/README.md)
