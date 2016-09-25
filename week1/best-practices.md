@@ -10,7 +10,7 @@ As you go along, try to rewrite parts of your code from earlier in the week usin
 
 ## Spiral: Loading stuff
 
-Let's see if we can add some File I/O here by [loading the game board](spiral/loading.md). When you're done with that, how about adding some [monsters](spiral/loading.md).
+Let's see if we can add some File I/O here by [loading the game board](spiral/loading.md). When you're done with that, how about adding some [monsters](spiral/monsters.md).
 
 ![](blue-monster.png)
 
