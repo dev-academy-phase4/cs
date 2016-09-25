@@ -6,7 +6,7 @@
 
 2. Watch _Creating and Configuring Models_ and _The Power of Visual Studio_ in [https://mva.microsoft.com/en-US/training-courses/introduction-to-aspnet-mvc-8322](Introduction to ASP.NET MVC).
 
-  * This video mentions Entity Framework "code first". These concepts will be covered in much more depth in a later video, but for now, don't worry too much about the different ways to use EF, of which, code first is one. As you can tell, there is a relationship between your models and EF. That's all you really need to know at this point.
+  * This video mentions Entity Framework Code First. These concepts will be covered in much more depth in a later video, but for now, don't worry too much about the different ways to use EF, of which, code first is one. As you can tell, there is a relationship between your models and EF. That's all you really need to know at this point.
   * The video on VS mentions Zen Coding. This approach to HTML development is now called Emmet.
 
 3. Watch _Customizing Controllers_ in [https://mva.microsoft.com/en-US/training-courses/introduction-to-aspnet-mvc-8322](Introduction to ASP.NET MVC).
@@ -14,6 +14,18 @@
 4. Watch _Customizing Views_ in [https://mva.microsoft.com/en-US/training-courses/introduction-to-aspnet-mvc-8322](Introduction to ASP.NET MVC).
 
 
-## Exercise
+## Portfolio: Scaffolding
 
-Using Visual Studio 2015, create a new ASP.NET MVC application. Select the MVC template and build a build a clone of Twitter. The web app should let the user see a list of all tweets if they aren't signed in, but let them submit a new tweet if they are. You aren't expected to finish this application today, but you should be able to create some models, views and controllers to get started. Tomorrow we'll explore authentication.
+We want you to come away from this week with something fairly complete rather than Yet Another Half-Finished Practice Piece (YAHFiPP). Something that will look good in your portfolio. There are a number of different concepts you might like to try, but our tutorials will walk you through a portfolio site: a framework for presenting past experience and current projects that you can use to show to employers at interviews.
+
+Obviously you're going to want to put your own styling and personal touch on it, but we'll show you how to make it all work and how to test it all using xUnit.
+
+To begin with, do the [scaffolding](portfolio/scaffolding.md) walkthrough.
+
+
+## More Resources
+
+ - [https://github.com/jongalloway/MVA-Introduction-to-ASPNET-MVC](Source code for the Introduction to ASP.NET MVC series).
+ - [http://www.asp.net/mvc/overview/getting-started/introduction/getting-started](Getting Started with ASP.NET MVC 5): 11 tutorials. This uses VS 2013, but you should use VS 2015.
+ - [http://www.asp.net/mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application](Lifecycle of an ASP.NET MVC 5 Application): PDF.
+
