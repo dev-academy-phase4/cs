@@ -42,3 +42,4 @@ We may be able to help a (very) limited number of people with getting hold of a 
 ## Curriculum
 
  - [Week 1](week1/README.md)
+ - [Week 2](week2/README.md)
