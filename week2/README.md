@@ -8,10 +8,12 @@
  - [More Resources](#more-resources)
  - [Curriculum](#curriculum)
    - [Monday](#monday)
+<!--
    - [Tuesday](#tuesday)
    - [Wednesday](#wednesday)
    - [Thursday](#thursday)
    - [Friday](#friday)
+   -->
 
 
 ## Focus
@@ -60,6 +62,7 @@ By the end of Week Two you should be able to:
 
  - [MVC Basics](mvc-basics.md)
 
+<!--
 ### Tuesday
 
  - [Templating & View Models]()
@@ -76,3 +79,4 @@ By the end of Week Two you should be able to:
 
  - [Deployment with Azure]()
 
+-->
