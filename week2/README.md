@@ -66,7 +66,7 @@ By the end of Week Two you should be able to:
 [//]: # ( - [Templating & View Models]())
 
 [//]: # (### Wednesday)
- 
+
 [//]: # ( - [SQLServer & Entity Framework]())
 
 [//]: # (### Thursday)

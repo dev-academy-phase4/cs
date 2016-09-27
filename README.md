@@ -5,6 +5,7 @@
  - [Introduction](#introduction)
  - [Requirements](#requirements)
    - [Windows](#windows)
+   - [A note on Visual Studio Code](#a-note-on-visual-studio-code)
  - [Curriculum](#curriculum)
 
 
