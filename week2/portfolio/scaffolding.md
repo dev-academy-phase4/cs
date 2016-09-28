@@ -82,8 +82,6 @@ There's going to be a bunch of red now! That's because we need to install a few 
 
 Install both xUnit and the xUnit Visual Studio runner (you don't need the console runner just now). Once that's done, search on 'mvc' and install Microsoft.AspNet.Mvc, then close the Package Manager window. In Solution Explorer, right click on `PortfolioTests` and choose _Add_ / _Reference_. The first thing you should see is an empty checkbox for `Portfolio`: check that box. 
 
-![](portfolio-references.png)
-
 That should be enough to get rid of the 'red squigglies'. Run the tests just to be sure your scaffold is working (open the test runner with _Test_ / _Windows_ / _Test Explorer_ if it's not already open). 
 
 
