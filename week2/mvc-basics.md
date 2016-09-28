@@ -33,6 +33,5 @@ There's an important note here, however: the linked article suggests using a new
 ## More Resources
 
  - [Source code for the Introduction to ASP.NET MVC series](https://github.com/jongalloway/MVA-Introduction-to-ASPNET-MVC).
- - [Getting Started with ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started): 11 tutorials. This uses VS 2013, but you should use VS 2015.
  - [Lifecycle of an ASP.NET MVC 5 Application](http://www.asp.net/mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application): PDF.
 

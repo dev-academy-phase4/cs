@@ -61,18 +61,18 @@ By the end of Week Two you should be able to:
 
  - [MVC Basics](mvc-basics.md)
 
-[//]: # (### Tuesday)
+### Tuesday
 
-[//]: # ( - [Templating & View Models]())
+ - [Templating & View Models](templating-view-models.md)
 
-[//]: # (### Wednesday)
+### Wednesday
 
-[//]: # ( - [SQLServer & Entity Framework]())
+ - [SQLServer & Entity Framework](entity-framework.md)
 
-[//]: # (### Thursday)
+### Thursday
 
-[//]: # ( - [Routing & Static Files]())
+ - [Routing & Static Files](routing.md)
 
-[//]: # (### Friday)
+### Friday
 
-[//]: # ( - [Deployment with Azure]())
+ - [Deployment with Azure](azure.md)
