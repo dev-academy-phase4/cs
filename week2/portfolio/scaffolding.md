@@ -34,6 +34,13 @@ Things to look out for:
 Clicking OK at this point will set off a lot of downloading and installing, much like a big NPM install! You'll end up looking at the `Project_Readme.html`, which is a standard file featuring links to various things you can do with ASP.NET. You can safely close this for now.
 
 
+## Updating packages
+
+It's a good idea to update to the latest stable versions of the packages in your solution. In Solution Explorer, right click on the `Portfolio` solution and choose _Manage NuGet Packages for Solution..._. Click _Update_, and wait for the available updates to finish loading. Check the _Select all packages_ box near the top left, and click _Update_.
+
+This will take quite awhile: good get-up-and-stretch moment!
+
+
 ## The test project
 
 We're going to need some unit tests. In the Solution Explorer, right click the Portfolio solution and choose _Add_ / _New Project..._. The Web Application project template will probably still be selected, but don't choose this: you want to click on _C#_ on the left hand side, and you'll see a whole lot of different options. Find _Class Library_ and click once on that, then enter the name _PortfolioTests_.
@@ -73,8 +80,23 @@ There's going to be a bunch of red now! That's because we need to install a few 
 
 ![](portfolio-xunit.png)
 
-Install both xUnit and the xUnit Visual Studio runner (you don't need the console runner just now). Once that's done, close the Package Manager window. In Solution Explorer, right click on `PortfolioTests` and choose _Add_ / _Reference_. The first thing you should see is an empty checkbox for `Portfolio`: check that box. Then click _Assemblies_ / _Framework_ on the left hand side, and search for `System.Web.Mvc` in the box at top right. Check the box that shows up, and click _OK_.
+Install both xUnit and the xUnit Visual Studio runner (you don't need the console runner just now). Once that's done, search on 'mvc' and install Microsoft.AspNet.Mvc, then close the Package Manager window. In Solution Explorer, right click on `PortfolioTests` and choose _Add_ / _Reference_. The first thing you should see is an empty checkbox for `Portfolio`: check that box. 
 
 ![](portfolio-references.png)
 
-That should be enough to get rid of the 'red squigglies'. Run the tests just to be sure your scaffold is working (open the test runner with _Test_ / _Windows_ / _Test Explorer_ if it's not already open). If you have difficulty with any of this setup stuff, ask in the Phase 4 Slack channel for help.
+That should be enough to get rid of the 'red squigglies'. Run the tests just to be sure your scaffold is working (open the test runner with _Test_ / _Windows_ / _Test Explorer_ if it's not already open). 
+
+
+## Stage and commit
+
+Create a repository on your GitHub account. You can of course add and commit the solution using command line Git tools, but you might like to try using the Team Explorer. Open it using _View_ / _Team Explorer_, click the little home icon, then _Changes_.
+
+![](portfolio-changes.png)
+
+Enter a commit message, then hit the _Commit All_ button (if it asks you to save changes to the solution file, do that).
+
+![](portfolio-commit.png)
+
+It'll offer a link to _Sync_ your repository. This is the same as a `git push`. Click the link and the _Publish Git Repo_ that will be displayed, enter the URL for your GitHub repository, and click the _Publish_ button.
+
+If you have difficulty with any of this setup stuff, ask in the Phase 4 Slack channel for help.
