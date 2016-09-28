@@ -28,6 +28,7 @@ The focus of this week is:
 ## Core Concepts
 
  - The Model-View-Controller architecture
+ - View Models
  - SQLServer
  - Object-Relational Mappers
    - Entity Framework Code First
