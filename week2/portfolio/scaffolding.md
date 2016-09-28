@@ -22,8 +22,10 @@ When you click OK, you'll be taken to a screen like this one:
 Things to look out for:
 
  - Make sure MVC is selected, as shown above
- - Auth should say _Individual User Accounts_.
+ - Authentication (on the right) should say _Individual User Accounts_.
    - This will take care of quite a bit of automatic scaffolding for you, including the database. You'll want this option most of the time, and you can easily add third-party authentication later (Facebook, Google etc.)
+ - You could, if you wished, set up Azure deployment at this step but leave it unchecked for now.
+   - We'll go over deployment later in the week.
  - Although it offers to make a test project for you, you can leave this unchecked for now.
    - It'll set it up using Microsoft's test suite, and we're going with xUnit. We can avoid adding a bunch of things we don't need by doing it ourselves.
 
