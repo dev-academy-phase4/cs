@@ -22,6 +22,7 @@ The focus of this week is:
  - Server-side rendering with Razor templates
  - Server-side routing
  - Databases with Entity Framework Code First
+ - Deployment with Azure
 
 
 ## Core Concepts
