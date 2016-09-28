@@ -42,5 +42,39 @@ We're going to need some unit tests. In the Solution Explorer, right click the P
 
  - Notice there's several templates starting with _Class Library_: choose the plain one.
 
+In the Solution Explorer, right click the file that was automatically created in `PortfolioTests` called `Class1` and rename it to `HomeControllerTests`. Replace the content with the following:
 
-##
+```cs
+using System.Web.Mvc;
+using SimpleDemo.Controllers;
+using Xunit;
+
+namespace PortfolioTests
+{
+    public class HomeControllerTests
+    {
+        [Fact]
+        public void Index()
+        {
+            // Arrange
+            var controller = new HomeController();
+
+            // Act
+            var result = controller.Index() as ViewResult;
+
+            // Assert
+            Assert.NotNull(result);
+        }
+    }
+}
+```
+
+There's going to be a bunch of red now! That's because we need to install a few more things and add some references. In Solution Explorer, right click on `PortfolioTests` and select _Manage NuGet Packages..._. Click _Browse_, then search for 'xunit':
+
+![](portfolio-xunit.png)
+
+Install both xUnit and the xUnit Visual Studio runner (you don't need the console runner just now). Once that's done, close the Package Manager window. In Solution Explorer, right click on `PortfolioTests` and choose _Add_ / _Reference_. The first thing you should see is an empty checkbox for `Portfolio`: check that box. Then click _Assemblies_ / _Framework_ on the left hand side, and search for `System.Web.Mvc` in the box at top right. Check the box that shows up, and click _OK_.
+
+![](portfolio-references.png)
+
+That should be enough to get rid of the 'red squigglies'. Run the tests just to be sure your scaffold is working (open the test runner with _Test_ / _Windows_ / _Test Explorer_ if it's not already open). If you have difficulty with any of this setup stuff, ask in the Phase 4 Slack channel for help.
