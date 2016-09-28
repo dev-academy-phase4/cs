@@ -15,3 +15,15 @@ Notice several things here:
  - A name has been provided. Pay attention to where Visual Studio plans to save your solution: by default, it'll be in the projects directory but you may prefer a work directory elsewhere.
  - The boxes for _Create directory for solution_ and _Create new Git repository_ are both checked: you want these.
 
+When you click OK, you'll be taken to a screen like this one:
+
+![](portfolio-mvc.png)
+
+Things to look out for:
+
+ - Make sure MVC is selected, as shown above
+ - Auth should say _Individual User Accounts_.
+   - This will take care of quite a bit of automatic scaffolding for you, including the database. You'll want this option most of the time, and you can easily add third-party authentication later (Facebook, Google etc.)
+ - Although it offers to make a test project for you, you can leave this unchecked for now.
+   - It'll set it up using Microsoft's test suite, and we're going with xUnit. We can avoid adding a bunch of things we don't need by doing it ourselves.
+
