@@ -8,11 +8,10 @@
  - [More Resources](#more-resources)
  - [Curriculum](#curriculum)
    - [Monday](#monday)
-
-[//]: # (   - [Tuesday](#tuesday) )
-[//]: # (   - [Wednesday](#wednesday) )
-[//]: # (   - [Thursday](#thursday) )
-[//]: # (   - [Friday](#friday) )
+   - [Tuesday](#tuesday)
+   - [Wednesday](#wednesday)
+   - [Thursday](#thursday)
+   - [Friday](#friday)
 
 
 ## Focus
