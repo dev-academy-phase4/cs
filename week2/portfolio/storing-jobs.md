@@ -26,7 +26,7 @@ In theory it might be cleaner to put the `ApplicationDbContext` in its own file,
 
 ## A note on creating a new DbContext
 
-Be aware that if you decide not to use the existing `ApplicationDbContext`, you _could_ create another one but managing the multiple contexts, enabling and running migrations can be quite a bit more complex for a new user. We suggest you use the existing context until you've had a lot of practice with Entity Framework.
+Be aware that if you decide not to use the existing `ApplicationDbContext`, you _could_ create another one but managing the multiple contexts, enabling and running migrations can be quite a bit more complex for a new user. We suggest you use the existing context until you've had a lot of practice with Entity Framework. There's quite a nice video example of how to organise DbContexts [here](http://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m6-ef6&mode=live&clip=2&course=aspdotnet-mvc5-fundamentals).
 
 
 ## Migrating changes
@@ -53,4 +53,32 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 
 In Package Manager Console, type `add-migration Jobs` and take a look at the migration file that pops up. Then run `update-database` again.
 
+
+## Loading jobs
+
+Ok, so let's get rid of our static data and start using the database. In your `History` route, we need to build the view model based on what we get back from the database context. First, we'll set up `HomeController` with an instance of `ApplicationDbContext` to access the database:
+
+```cs
+public class HomeController : Controller
+{
+    private readonly ApplicationDbContext _db;
+
+    public HomeController()
+    {
+        _db = new ApplicationDbContext();
+    }
+```
+
+Now, any of our actions in the controller (`Index()`, `Contact()`, `History()`) can access the database via the `_db` field. Tables (entities) in the database are properties on `_db`. So we can populate our `History()` method like so:
+
+```cs
+var jobs = _db.Jobs;
+var vm = new HistoryViewModel
+{
+    Title = "Work History",
+    Jobs = jobs.ToList()
+};
+```
+
+Hit F5 to run the site in debug mode and navigate to `/Home/History`. There shouldn't be any actual jobs: we haven't added any yet! That comes next.
 
