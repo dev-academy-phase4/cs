@@ -181,6 +181,7 @@ To loop through the jobs in our view model, we can use `@foreach`:
 This approach works fine. However, it's not considered 'best practice'! In general, we want to keep as much code as possible _out_ of the view. 
 
 A way around this is to tell the view exactly how you want to display a `Job`. To do this we use a _partial_, which are based around a similar concept to Handlebar's partials, but can be associated with a model. Add a new folder under `Views/Home` called `DisplayTemplates`. Right click this and choose _Add_ / _MVC 5 Partial Page (Razor)_. Note that it will try to name it with a leading underscore, but you actually want to call it `Job.cshtml` so that the HTML helper will know which one to use. 
+
 ![](portfolio-display-template.png)
 
 Inside, put this:
