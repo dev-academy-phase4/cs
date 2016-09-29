@@ -8,7 +8,7 @@ To begin with, watch Julie Lerman's [Getting Started with Entity Framework 6](ht
 
 ## Wait, what's an ORM again?
 
-Here's [a pretty good non-C# specific answer on Stack Overflow](http://stackoverflow.com/a/1279678). It's a high-level approach to databases that attempts to describe the kinds of relationships that exist at the database level using objects and methods that may be more familiar to the programmer. There is some criticism of ORMs (see [Do you need an ORM?](http://enterprisecraftsmanship.com/2015/11/30/do-you-need-an-orm/) for a reasonable summary. Allow me to quote from that article just in case it isn't abundantly clear:
+Here's [a pretty good non-C# specific answer on Stack Overflow](http://stackoverflow.com/a/1279678). It's a high-level approach to databases that attempts to describe the kinds of relationships that exist at the database level using objects and methods that may be more familiar to the programmer. There is some criticism of ORMs (see [Do you need an ORM?](http://enterprisecraftsmanship.com/2015/11/30/do-you-need-an-orm/) for a reasonable summary). Allow me to quote from that article just in case it isn't abundantly clear:
 
 > First of all, I have to point out that writing your own ORM is almost always _a bad idea_.
 
