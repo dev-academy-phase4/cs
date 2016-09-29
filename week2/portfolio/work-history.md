@@ -178,7 +178,12 @@ To loop through the jobs in our view model, we can use `@foreach`:
  - Notice that `Model` isn't preceeded by an `@` symbol. This is because we're already inside a C# expression. Razor uses the `@` at the start of the line to determine that the following text is C#
  - The text inside the braces is HTML, so requires an `@` in front of the model values to tell the templating engine that they come from C#
 
-This approach works fine. However, it's not considered 'best practice'! In general, we want to keep as much code as possible _out_ of the view. A way around this is to tell the view exactly how you want to display a `Job`. To do this we use a partial, which are based around a similar concept to Handlebar's partials, but can be associated with a model. Add a new folder under `Views/Home` called `DisplayTemplates`. Right click this and choose _Add_ / _MVC 5 Partial Page (Razor)_. Note that it will try to name it with a leading underscore, but you actually want to call it `Job.cshtml` so that the HTML helper will know which one to use. Inside, put this:
+This approach works fine. However, it's not considered 'best practice'! In general, we want to keep as much code as possible _out_ of the view. 
+
+A way around this is to tell the view exactly how you want to display a `Job`. To do this we use a _partial_, which are based around a similar concept to Handlebar's partials, but can be associated with a model. Add a new folder under `Views/Home` called `DisplayTemplates`. Right click this and choose _Add_ / _MVC 5 Partial Page (Razor)_. Note that it will try to name it with a leading underscore, but you actually want to call it `Job.cshtml` so that the HTML helper will know which one to use. 
+![](portfolio-display-template.png)
+
+Inside, put this:
 
 ```cs
 @model Portfolio.Models.Job
