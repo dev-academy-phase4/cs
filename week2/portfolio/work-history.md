@@ -16,7 +16,7 @@ Let's start with the data first. Before we do the user-facing pretty stuff, we n
 
 There are probably other things we might be able to use, but we'll add them as we go. Thinking about what data we might need before doing the cosmetic part of the page helps us think about how the rest of the application will need to be organised. This is a good practice to apply no matter what tech stack you're working with.
 
-Start from the inside-out! Create a new class under _Models_ in Solution Explorer called `Job.cs`. It should just consist of public properties like so:
+Start from the inside-out! Create a new class under `Models` in Solution Explorer called `Job.cs`. It should just consist of public properties like so:
 
 ```cs
 using System;
@@ -36,7 +36,7 @@ namespace Portfolio.Models
 }
 ```
 
-Now create a new class under _Models_ `HistoryViewModel.cs`. For now, it should just have a collection of `Job` in it (later there will no doubt be other things to add):
+Now create a new class under `Models`: `HistoryViewModel.cs`. For now, it should just have a page title and a collection of `Job` in it (later there will no doubt be other things to add):
 
 ```cs
 using System.Collections.Generic;
@@ -80,7 +80,7 @@ namespace PortfolioTests
             var model = result?.Model as HistoryViewModel;
 
             // Assert
-            Assert.NotNull(result);
+            Assert.NotNull(model);
         }
     }
 }
