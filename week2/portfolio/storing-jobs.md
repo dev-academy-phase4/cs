@@ -145,4 +145,4 @@ Finally, go to `Views` / `Jobs` / `Create.cshtml`. Find it's `@section Scripts {
 
 This binds the jQueryUI datepicker to any `input[type=datetime]`. When you save and re-run the application in debug mode, you should see nice date pickers pop up when you click in the date fields.
 
-![](portfolio-form-validation.png)
+![](portfolio-date-picker.png)
