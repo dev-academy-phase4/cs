@@ -56,29 +56,13 @@ In Package Manager Console, type `add-migration Jobs` and take a look at the mig
 
 ## Loading jobs
 
-Ok, so let's get rid of our static data and start using the database. In your `History` route, we need to build the view model based on what we get back from the database context. First, we'll set up `HomeController` with an instance of `ApplicationDbContext` to access the database:
+Ok, so let's get rid of our static data and start using the database. Initially we put some static data in the `History` method of the `HomeController`. However, now we're going to take advantage of some of Visual Studio's automatic code generation to create a whole series of useful actions and views.
 
-```cs
-public class HomeController : Controller
-{
-    private readonly ApplicationDbContext _db;
+In Solution Explorer, right click on _Controllers_ and select _Add_ / _Controller..._. Choose _MVC 5 Controller with views, using Entity Framework_ from the dialog that pops up and hit the _Add_ button.
 
-    public HomeController()
-    {
-        _db = new ApplicationDbContext();
-    }
-```
+![](portfolio-controller-with-views.png)
 
-Now, any of our actions in the controller (`Index()`, `Contact()`, `History()`) can access the database via the `_db` field. Tables (entities) in the database are properties on `_db`. So we can populate our `History()` method like so:
+In the box that follows, choose `Job` as the model class, `ApplicationDbContext` as the context class, tick the _Use async controller actions_ box, and leave the layout page name empty (it's already set).
 
-```cs
-var jobs = _db.Jobs;
-var vm = new HistoryViewModel
-{
-    Title = "Work History",
-    Jobs = jobs.ToList()
-};
-```
-
-Hit F5 to run the site in debug mode and navigate to `/Home/History`. There shouldn't be any actual jobs: we haven't added any yet! That comes next.
+![](portfolio-jobs-controller.png)
 
