@@ -146,3 +146,60 @@ Finally, go to `Views` / `Jobs` / `Create.cshtml`. Find it's `@section Scripts {
 This binds the jQueryUI datepicker to any `input[type=datetime]`. When you save and re-run the application in debug mode, you should see nice date pickers pop up when you click in the date fields.
 
 ![](portfolio-date-picker.png)
+
+
+## Attributes
+
+Entity Framework Code First uses [attributes](http://www.entityframeworktutorial.net/code-first/dataannotation-in-code-first.aspx) on properties for validation and to modify the database schema. For example, 
+
+```cs
+[MaxLength(255)]
+public string Description { get; set; }
+```
+
+Getting an automated creation timestamp for a record is not as simple as I'd like it to be in Code First. The attribute itself is not too bad. In the `Job` model:
+
+```cs
+[Required, DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+public DateTime Created { get; set; }
+```
+
+In the Package Manager Console, type `add-migration AutoCreated`. In the migration file that pops up, change:
+
+```cs
+  AlterColumn("dbo.Jobs", "Created", c => c.DateTime(nullable: false));
+```
+
+to this:
+
+```cs
+  AlterColumn("dbo.Jobs", "Created", c => c.DateTime(nullable: false, defaultValueSql: "GETDATE()"));
+```
+
+Save the file and type `update-database` in Package Manager Console. Next, let's take out the ability to edit these fields from the view. In `Views` / `Jobs` / `Create.cshtml`, remove the form groups for `model.Created` and `model.Updated`:
+
+```cs
+  <div class="form-group">
+      @Html.LabelFor(model => model.Created, htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+          @Html.EditorFor(model => model.Created, new { htmlAttributes = new { @class = "form-control" } })
+          @Html.ValidationMessageFor(model => model.Created, "", new { @class = "text-danger" })
+      </div>
+  </div>
+
+  <div class="form-group">
+      @Html.LabelFor(model => model.Updated, htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+          @Html.EditorFor(model => model.Updated, new { htmlAttributes = new { @class = "form-control" } })
+          @Html.ValidationMessageFor(model => model.Updated, "", new { @class = "text-danger" })
+      </div>
+  </div>
+```
+
+Do the same thing for the `Edit.cshtml` view. Finally, we need to explicitly update the `Updated` property whenever we submit a job to the database. In `JobsController`, add the following line to the top of both `POST` actions (`Create` and `Edit`):
+
+```cs
+  job.Updated = DateTime.Now;
+```
+
+Run the application in debug mode. You should find that the `Created` date will be set automatically, and the `Updated` date will change each time you edit the record.
