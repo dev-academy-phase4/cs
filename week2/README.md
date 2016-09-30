@@ -72,7 +72,7 @@ By the end of Week Two you should be able to:
 
 ### Thursday
 
- - [Routing & Static Files](routing.md)
+ - [Authentication](authentication.md)
 
 ### Friday
 
