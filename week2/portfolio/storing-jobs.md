@@ -66,3 +66,81 @@ In the box that follows, choose `Job` as the model class, `ApplicationDbContext`
 
 ![](portfolio-jobs-controller.png)
 
+This generates a _bunch_ of new code! Have a look in `JobsController.cs` and `Views` / `Jobs` and try to figure out what's happening here! Notice that `JobsController` now has a private field, `db`, which is an `ApplicationDbContext`. Notice also that there's a property `db.Jobs` that contains all the jobs in the database:
+
+```cs
+// GET: Jobs
+public async Task<ActionResult> Index()
+{
+    return View(await db.Jobs.ToListAsync());
+}
+```
+
+ - As you can see, we make use of `async` / `await` here to account for the fact that database calls are asynchronous: we don't know how long it'll take for them to complete.
+
+
+## Link it up
+
+We can add a menu item for our new controller using a tiny bit of additional code. Go to `Views` / `Shared` / `_Layout.cshtml` and you'll see the links that make up the menu bar:
+
+```cs
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    </ul>
+    @Html.Partial("_LoginPartial")
+</div>
+```
+Those parameters to `ActionLink` are (in order): _link text_, _action_, and _controller_. All we need to do is add one more:
+
+```cs
+        <li>@Html.ActionLink("Jobs", "Index", "Jobs")</li>
+```
+
+Save and hit F5 to run the application in debug mode. You should see a 'Jobs' link on the menu bar, and can view, create and edit jobs.
+
+
+## Getting fancy
+
+> I'm sorry Dave, I'm afraid I can't do that.
+
+As you've probably discovered, there's a problem.
+
+![](portfolio-form-validation.png)
+
+We have a bunch of date fields in our model, and they're being displayed as ordinary text inputs. Two of them shouldn't be displayed at all: we want `Created` and `Updated` to be tracked by the database, not entered by humans. For the others, we really want our users to be presented with a friendly date picker.
+
+That's actually not too tricky. In Solution Explorer, right click on the Portfolio project and choose _Manage NuGet Packages_. Install the _jquery.UI.combined_ package, which has a date picker we can use. Once that's done, jump into `App_Start` / `BundleConfig.cs`. This file takes care of bundling static content, making it available for download. Under the last bundle, add two more:
+
+```cs
+  bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(  
+            "~/Scripts/jquery-ui-{version}.js")); 
+
+  bundles.Add(new StyleBundle("~/Content/cssjqryUi").Include(  
+         "~/Content/jquery-ui.css")); 
+```
+
+Finally, go to `Views` / `Jobs` / `Create.cshtml`. Find it's `@section Scripts {` (it'll be down the bottom). Inside the braces, add the following beneath any existing content:
+
+```cs
+    @Scripts.Render("~/bundles/jqueryui")  
+    @Styles.Render("~/Content/cssjqryUi")  
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">  
+  
+    <script type="text/javascript">  
+  
+     $(document).ready(function () {  
+         $('input[type=datetime]').datepicker({  
+             dateFormat: "dd/M/yy",  
+             changeMonth: true,  
+             changeYear: true,  
+             yearRange: "-60:+0"  
+         });  
+  
+     });  
+    </script>  
+```
+
+This binds the jQueryUI datepicker to any `input[type=datetime]`. When you save and re-run the application in debug mode, you should see nice date pickers pop up when you click in the date fields.
