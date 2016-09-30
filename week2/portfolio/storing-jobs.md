@@ -148,7 +148,7 @@ This binds the jQueryUI datepicker to any `input[type=datetime]`. When you save 
 ![](portfolio-date-picker.png)
 
 
-## Attributes
+## Attributes and automatic date fields
 
 Entity Framework Code First uses [attributes](http://www.entityframeworktutorial.net/code-first/dataannotation-in-code-first.aspx) on properties for validation and to modify the database schema. For example, 
 
