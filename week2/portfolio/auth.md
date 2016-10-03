@@ -24,7 +24,9 @@ Modify this slightly by adding an attribute to the `appSettings` element so it l
   <appSettings file="Secrets.config">
 ```
 
-This means, "check inside the element, but _also_ check this file for more configuration." Now, create the file. Right click the Portfolio project and select _Add_ / _New Item..._. Make sure _Web_ is selected on the left hand side, then choose _Web Configuration File_ as the template. Name the file `Secrets.config`. Immediately put it in .gitignore! You can either use Team Explorer and right-click / ignore, or edit the file directly. It's really important that this file go nowhere near version control.
+This means, "check inside the element, but _also_ check this file for more configuration." Now, create the file. Right click the Portfolio project and select _Add_ / _New Item..._. Make sure _Web_ is selected on the left hand side, then choose _Web Configuration File_ as the template. Name the file `Secrets.config`.
+
+Immediately put it in `.gitignore`! You can either use Team Explorer and right-click / ignore, or edit the file directly. It's really important that this file go nowhere near version control.
 
 Next, open `Secrets.config` and discard everything you find there! No, really. The only thing you want in there right now is this:
 
@@ -34,3 +36,50 @@ Next, open `Secrets.config` and discard everything you find there! No, really. T
 ```
 
 Later, this is where we'll go to put the app IDs and secrets from the various third-party services. [Here's](SampleSecrets.config) an example. As you can see, it's really just a series of key/value pairs.
+
+
+## HTTPS please
+
+Every web app should be HTTPS by default. Google will [penalise](http://motherboard.vice.com/read/google-will-soon-shame-all-websites-that-are-unencrypted-chrome-https) those that aren't secure by flagging them in the browser and ranking them lower in search results. Fortunately it's extremely easy to set up. First, find the `FilterConfig` class in `App_Start` and add the following line to the static method `RegisterGlobalFilters`:
+
+```cs
+  filters.Add(new RequireHttpsAttribute());
+```
+
+This adds the `RequireHttps` attribute to every controller in your application. Next, select `Portfolio` in Solution Explorer and hit F4 to open the properties paneif it's not already open. Change `SSL Enabled` to `True` and copy the SSL URL. Open the Property Pages by right clicking on `Portfolio` in Solution Explorer and choosing `Properties`. Yep, it's pretty confusing that they're both almost the same! Select _Web_ on the left hand side, and paste your new HTTPS URL into _Project URL_. Fire up the site in debug mode to check that the default URL is working correctly.
+
+
+## Create some accounts
+
+Wander off to one of the various providers (Google, Facebook etc) and make some apps to login with. The redirect URL will be `https://localhost:44300/signin-google` (or whatever port/service name combination you have).
+
+
+## Store the IDs and secrets
+
+In your `Secrets.config` file, add key/value pairs for each of your secrets. Use [the example](SampleSecrets.config) file as a guide.
+
+
+## Enable the authentication methods
+
+In `Startup.Auth.cs`, uncomment each service that you're planning to use and add your configuration values. You load each value from the config file like so:
+
+```cs
+app.UseFacebookAuthentication(
+  AppId: ConfigurationManager.AppSettings["FacebookAppId"],
+  AppSecret: ConfigurationManager.AppSettings["FacebookAppSecret"]
+);
+```
+
+More detail can be provided using the relevant `AuthenticationOptions` object. Here's a Twitter example:
+
+```cs
+app.UseTwitterAuthentication(new TwitterAuthenticationOptions()
+{
+    ConsumerKey = ConfigurationManager.AppSettings["TwitterConsumerKey"],
+    ConsumerSecret = ConfigurationManager.AppSettings["TwitterConsumerSecret"],
+    CallbackPath = new PathString(ConfigurationManager.AppSettings["TwitterRedirectUri"]),
+    BackchannelCertificateValidator = null
+});
+```
+
+(Note that for Twitter, setting the cert validator to null seems to be required to avoid errors.) Run your site again in debug mode and there should be new buttons on the login page corresponding to the third-party providers you've added.
