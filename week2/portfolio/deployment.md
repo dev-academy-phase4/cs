@@ -12,4 +12,15 @@ You will probably need to create a new resource group and app service plan. Choo
 
 ![](portfolio-publish.png)
 
+Obviously, you won't be able to call yours `edaportfolio` because I've already stolen that URL! At this point, you can click _Publish_ and you'll soon be looking at the 'finished' product.
 
+
+## SQLServer
+
+But wait, there's more! Unfortunately your newly-published site is not quite functional yet. Although you might be able to browse around, anything database-related will fail. Unsurprisingly, we can't just use our local database on Azure: we need to do some more configuration first.
+
+In your browser, visit [the Azure Portal](https://portal.azure.com) and sign in with your Microsoft account. Click on _App Services_, then the name of your portfolio application. You'll be presented with an awful lot of information about the app... take some time to explore, but probably don't change anything just yet. Click through the various options to get a feel for what's possible.
+
+![](portfolio-azure.png)
+
+Now go all the way back to the left hand side and click on 
