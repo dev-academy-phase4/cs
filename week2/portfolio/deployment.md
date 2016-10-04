@@ -31,12 +31,13 @@ Note that the server could end up being used by more than one application, so yo
 
 Click _Create_ down the bottom when you're done. Azure will work away in the background creating the database server. When it's done (try hitting _Refresh_) you'll see your database on the list.
 
-Click on the database, then _Overview_, then _Show database connection strings_. When they've loaded, click the copy icon next to _ADO.NET (SQL authentication)_. Then go back to _App Services_, click on your application, then _App Settings_. There's an entry for connection strings: create a new one (let's call it `DATABASE` for want of a better name) and paste the copied connection string into the second box.
+Click on the database, then _Overview_, then _Show database connection strings_. When they've loaded, click the copy icon next to _ADO.NET (SQL authentication)_. Then go back to _App Services_, click on your application, then _App Settings_. There's an entry for connection strings: create a new one called `DefaultConnection` and paste the copied connection string into the second box. Be sure to click _Save_ at the top of the page: the button isn't always obvious!
+
+It's important that we call it `DefaultConnection`, because that's the name of the connection in our development version of the application. When we deploy, that connection will be overridden by Azure's connection of the same name.
 
 ![](portfolio-connection.png)
 
-Next, go back into  
+Next, go back into Visual Studio. In Solution Explorer, click on the arrow next to `Web.config` and you'll see two profiles, _Debug_ and _Release_. Open up `Web.Release.Config`. Here we're going to access the connection string that Azure will make available to our published site.
 
 > Note: you can add SQL databases from the Create App Service dialog in Visual Studio which you saw above, by clicking on _Services_ (see [this](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) tutorial for more). However, it's good to get familiar with the web portal interface as well.
-
 
