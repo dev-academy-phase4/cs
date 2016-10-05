@@ -19,6 +19,8 @@ Obviously, you won't be able to call yours `edaportfolio` because we've already 
 
 But wait, there's more! Unfortunately your newly-published site is not quite functional yet. Although you might be able to browse around, anything database-related will fail. Unsurprisingly, we can't just use our local database on Azure: we need to do some more configuration first.
 
+> Note: you can add SQL databases from the Create App Service dialog in Visual Studio which you saw above, by clicking on _Services_ (see [this](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) tutorial for more). However, it's good to get familiar with the web portal interface as well.
+
 In your browser, visit [the Azure Portal](https://portal.azure.com) and sign in with your Microsoft account. Click on _App Services_, then the name of your portfolio application. You'll be presented with an awful lot of information about the app... take some time to explore, but probably don't change anything just yet. Click through the various options to get a feel for what's possible.
 
 ![](portfolio-azure.png)
@@ -44,10 +46,22 @@ Replace these sections with your SQLServer user and pass, so they'll end up look
 User ID=edademo;Password=12345ABCDE;
 ```
 
-Finally, be sure to click _Save_ at the top of the page: the button isn't always obvious!
+Be sure to click _Save_ at the top of the page: the button isn't always obvious!
 
 
 ![](portfolio-connection.png)
 
-> Note: you can add SQL databases from the Create App Service dialog in Visual Studio which you saw above, by clicking on _Services_ (see [this](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) tutorial for more). However, it's good to get familiar with the web portal interface as well.
 
+## Deploy with GitHub
+
+Finally, let's set up some continuous deployment for extra bonus points. What we want to happen: whenever we push the master branch to GitHub, it triggers an update of our deployed site. This is a pretty common deployment scenario, and one of the reasons why little or no development normally happens on master!
+
+In the portal, go to the portfolio application and select _Deployment options_, then _Configure required settings_:
+
+![](portfolio-github.png)
+
+Select GitHub, then _Configure required settings_, then click the _Authorize_ button which will take you to GitHub. Grant access to whatever Azure needs (usually the organisation in which your repo is kept, or just your personal repos). You'll see some options asking you to configure which organisation, project, and branch you'd like to deploy from. Make the appropriate selections and click _Ok_. (You don't have to configure _Performance test_.)
+
+The tricky part here is that we're keeping all of our auth secrets in a file that isn't committed to source control. How inconvenient! However, don't give in to the temptation to quietly add all that secret information to your repo... it's really a bad idea. Instead, we can add settings under _Application settings_ that will do the same job, just like we did with the database connection string.
+
+Now you should be good to go! Want to see it in action? Make a trivial but obvious change to your project (alter a heading, for example). Save and commit to master, then push master to GitHub.
