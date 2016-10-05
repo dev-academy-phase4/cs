@@ -62,6 +62,18 @@ In the portal, go to the portfolio application and select _Deployment options_, 
 
 Select GitHub, then _Configure required settings_, then click the _Authorize_ button which will take you to GitHub. Grant access to whatever Azure needs (usually the organisation in which your repo is kept, or just your personal repos). You'll see some options asking you to configure which organisation, project, and branch you'd like to deploy from. Make the appropriate selections and click _Ok_. (You don't have to configure _Performance test_.)
 
-The tricky part here is that we're keeping all of our auth secrets in a file that isn't committed to source control. How inconvenient! However, don't give in to the temptation to quietly add all that secret information to your repo... it's really a bad idea. Instead, we can add settings under _Application settings_ that will do the same job, just like we did with the database connection string.
+The tricky part here is that we're keeping all of our auth secrets in a file that isn't committed to source control. How inconvenient! However, don't give in to the temptation to quietly add all that secret information to your repo... it's really a bad idea. Instead, we can add settings under _Application settings_ that will do the same job, just like we did with the database connection string. You don't need to change your code, provided you use the same names that you used in `Secrets.config`.
 
-Now you should be good to go! Want to see it in action? Make a trivial but obvious change to your project (alter a heading, for example). Save and commit to master, then push master to GitHub.
+What you _do_ need to take care of is telling the `Web.config` not to try to load from `Secrets.config` in the release build. We can manage that using a _transform_. In Solution Explorer, if you click on the little arrow next to `Web.Config`, you'll see there are a couple of transform files underneath it. One of them is called `Web.Release.Config`. These files literally _transform_ the `Web.Config`, making changes to it so that it is suitable for your production site. It's not quite the same, but similar to Knex's development and production configurations, or npm's `dependencies` and `dev-dependencies`.
+
+What we want to do here is tell `appSettings` to stop using the `file` attribute. Here's the line you want to insert:
+
+```xml
+  <appSettings xdt:Transform="RemoveAttributes(file)" />
+```
+
+You can put this right underneath the line that begins with `<configuration ...`. Just ignore all the commented out bits.
+
+Lastly, we need to exclude `Secrets.config` from the solution. Note that this is not the same as deleting the file! We still want it there, but we're going to stop Visual Studio from tracking it so it doesn't go looking for it on the Azure server: it won't be there, and the build will fail. Go to Solution Explorer, right click on `Secrets.config` and select _Exclude from Project_. Do a save all and commit your changes to master.
+
+Now you should be good to go! Want to see it in action? Visit your application on the Azure Portal and click _Deployment options_. With any luck you should see a little spinning icon saying it's building, or a big green tick saying your build succeeded! If not, you can click into the failed build and it will show you the logs of what went wrong.
