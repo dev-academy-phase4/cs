@@ -64,6 +64,8 @@ Select GitHub, then _Configure required settings_, then click the _Authorize_ bu
 
 The tricky part here is that we're keeping all of our auth secrets in a file that isn't committed to source control. How inconvenient! However, don't give in to the temptation to quietly add all that secret information to your repo... it's really a bad idea. Instead, we can add settings under _Application settings_ that will do the same job, just like we did with the database connection string. You don't need to change your code, provided you use the same names that you used in `Secrets.config`.
 
+![](portfolio-app-settings.png)
+
 What you _do_ need to take care of is telling the `Web.config` not to try to load from `Secrets.config` in the release build. We can manage that using a _transform_. In Solution Explorer, if you click on the little arrow next to `Web.Config`, you'll see there are a couple of transform files underneath it. One of them is called `Web.Release.Config`. These files literally _transform_ the `Web.Config`, making changes to it so that it is suitable for your production site. It's not quite the same, but similar to Knex's development and production configurations, or npm's `dependencies` and `dev-dependencies`.
 
 What we want to do here is tell `appSettings` to stop using the `file` attribute. Here's the line you want to insert:
